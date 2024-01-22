@@ -1,0 +1,63 @@
+﻿@model IEnumerable<BITCollege_SSJ.Models.Student>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table id="multiword_headings" class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.StudentNumber)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FullName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FullAddress)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AcademicProgramId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.GradePointStateId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.GradePointAverage)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.StudentNumber)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.FullName)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.FullAddress)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.AcademicProgram.ProgramAcronym)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.GradePointState.Description)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.GradePointAverage)
+    </td>
+    <td>
+        @Html.ActionLink("Edit", "Edit", new { id = item.StudentId }) |
+        @Html.ActionLink("Details", "Details", new { id = item.StudentId }) |
+        @Html.ActionLink("Delete", "Delete", new { id = item.StudentId })
+    </td>
+</tr>
+}
+
+</table>

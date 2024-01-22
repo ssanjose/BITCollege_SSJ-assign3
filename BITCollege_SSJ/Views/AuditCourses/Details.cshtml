@@ -1,0 +1,66 @@
+﻿@model BITCollege_SSJ.Models.AuditCourse
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>AuditCourse</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.AcademicProgram.ProgramAcronym)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AcademicProgram.ProgramAcronym)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CourseNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CourseNumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Title)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Title)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CreditHours)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CreditHours)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TuitionAmount)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TuitionAmount)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Notes)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Notes)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.CourseId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
